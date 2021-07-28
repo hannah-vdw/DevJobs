@@ -22,12 +22,12 @@ import org.springframework.web.client.RestTemplate;
 public class JobsResource {
 	
 	@Value("${api.key}")
-	private String apiKey;
+	private static String apiKey;
 	
 	@Value("${app.id}")
-	private String appId;
+	private static String appId;
 	
-//	private static String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey + "&what=juniordeveloper&where=london&content-type=application/json";
+	//private static String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey + "&what=juniordeveloper&where=london&content-type=application/json";
 	
 	private static String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=43a2f03d&app_key=6166dec3f067687300360f6704b92a81&what=juniordeveloper&where=london&content-type=application/json";
 	
@@ -37,11 +37,12 @@ public class JobsResource {
 	@GetMapping("/jobs")
 	public List<Object> getJobs() {
 		
-		System.out.println(appId + apiKey);
+		System.out.println("Hey there:" + appId + "it's me" + apiKey);
 	
-		Object[] jobs = restTemplate.getForObject(url, Object[].class);
+		Object jobs = restTemplate.getForObject(url, Object.class);
 		
 		return Arrays.asList(jobs);
+//		make it Jobs(result) jobBuilder -> jobs -> job
 	}
 }
 
