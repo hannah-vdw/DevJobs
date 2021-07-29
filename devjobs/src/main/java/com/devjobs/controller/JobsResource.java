@@ -20,22 +20,22 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class JobsResource {
-	
-	@Value("${api.key}")
 	private static String apiKey;
-	
-	@Value("${app.id}")
 	private static String appId;
 	
-	//private static String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey + "&what=juniordeveloper&where=london&content-type=application/json";
-	
-	private static String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=43a2f03d&app_key=6166dec3f067687300360f6704b92a81&what=juniordeveloper&where=london&content-type=application/json";
+	public JobsResource(@Value("${api.key}") String apiKey, @Value("${app.id}") String appId) {
+		this.apiKey = apiKey;
+		this.appId = appId;
+	}
 	
 	@Autowired
 	private RestTemplate restTemplate;
 	
+	
 	@GetMapping("/jobs")
 	public List<Object> getJobs() {
+		
+		String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey + "&what=juniordeveloper&where=london&content-type=application/json";
 		
 		System.out.println("Hey there:" + appId + "it's me" + apiKey);
 	
@@ -50,5 +50,4 @@ public class JobsResource {
 
 
 //Job job = restTemplate.getForObject(
-//url + appId + "&app_key=" + apiKey + "&what=juniordeveloper&where=london",
 //Job.class
