@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Jobs {
 
-	private String title;
+//	private String title;
 //	private Long jobId;
 	public ArrayList<Object> results;
 	public Object item;
@@ -43,14 +43,14 @@ public class Jobs {
 	}
 
 
-	public String getTitle() {
-		return title;
-	}
-	
-	public void setTitle() {
-		this.title = item.title;
-	}
+//	public String getTitle() {
+//		return title;
+//	}
 //	
+//	public void setTitle() {
+//		this.title = item.title;
+//	}
+////	
 //	public Long getJobId() {
 //		return jobId;
 //	}
