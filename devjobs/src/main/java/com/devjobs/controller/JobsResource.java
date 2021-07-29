@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-//import com.java.devjobs.model.Job;
+import com.devjobs.model.Jobs;
 
 
 @RestController
@@ -33,13 +33,17 @@ public class JobsResource {
 	
 	
 	@GetMapping("/jobs")
-	public List<Object> getJobs() {
+	public List<Jobs> getJobs() {
 		
 		String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey + "&what=juniordeveloper&where=london&content-type=application/json";
 		
 		System.out.println("Hey there:" + appId + "it's me" + apiKey);
 	
-		Object jobs = restTemplate.getForObject(url, Object.class);
+		Jobs jobs = restTemplate.getForObject(url, Jobs.class);
+		
+		System.out.println(jobs.getResults());
+		
+		jobs.setItem();
 		
 		return Arrays.asList(jobs);
 //		make it Jobs(result) jobBuilder -> jobs -> job
