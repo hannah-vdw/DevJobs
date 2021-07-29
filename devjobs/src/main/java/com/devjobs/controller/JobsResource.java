@@ -13,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.devjobs.model.Jobs;
 
-
 @RestController
 
 //@RequestMapping("/jobs")
@@ -22,36 +21,35 @@ import com.devjobs.model.Jobs;
 public class JobsResource {
 	private static String apiKey;
 	private static String appId;
-	
+
 	public JobsResource(@Value("${api.key}") String apiKey, @Value("${app.id}") String appId) {
 		this.apiKey = apiKey;
 		this.appId = appId;
 	}
-	
+
 	@Autowired
 	private RestTemplate restTemplate;
-	
-	
+
 	@GetMapping("/jobs")
 	public List<Jobs> getJobs() {
-		
-		String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey + "&what=juniordeveloper&where=london&content-type=application/json";
-		
-		System.out.println("Hey there:" + appId + "it's me" + apiKey);
-	
+
+		String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey
+				+ "&what=juniordeveloper&where=london&content-type=application/json";
+
 		Jobs jobs = restTemplate.getForObject(url, Jobs.class);
-		
-		System.out.println(jobs.getResults());
-		
+
+		System.out.println("RESULTS: " + jobs.getResults());
+
 		jobs.setItem();
+		
+		System.out.println("TITLE IS: " + jobs.getTitle());
+		
+		jobs.setTitle();
 		
 		return Arrays.asList(jobs);
 //		make it Jobs(result) jobBuilder -> jobs -> job
 	}
 }
-
-
-
 
 //Job job = restTemplate.getForObject(
 //Job.class
