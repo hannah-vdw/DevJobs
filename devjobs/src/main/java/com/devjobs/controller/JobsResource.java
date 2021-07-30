@@ -42,9 +42,15 @@ public class JobsResource {
 
 		jobs.setItem();
 		
-		System.out.println("TITLE IS: " + jobs.getTitle());
+		System.out.println("ITEM: " + jobs.getItem());
 		
 		jobs.setTitle();
+		
+		System.out.println("TITLE: " + jobs.getTitle());
+		
+		jobs.setJobId();
+		
+		System.out.println("JOBID: " + jobs.getJobId());
 		
 		return Arrays.asList(jobs);
 //		make it Jobs(result) jobBuilder -> jobs -> job

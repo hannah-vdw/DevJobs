@@ -26,7 +26,6 @@ public class Jobs {
 	}
 
 	public void setItem() {
-		System.out.println("ITEM: " + results.get(0));
 		this.item = results.get(0);
 	}
 
@@ -40,29 +39,24 @@ public class Jobs {
 		
 		map.forEach((k,v)-> {
 			if (k == "title") {
-//				System.out.println("THIS IS V: " + v);
 				this.title = v.toString();
 			}
-//			System.out.println("KEY: " + k + ". VALUE: " + v);
-//			this.title.toString();
 		});
-		
-//		this.title = title;
 	}
 	
-//	public Long getJobId() {
-//		return jobId;
-//	}
-//	
-//	public void getJobId(Long jobId) {
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		Map<String, Object> map = objectMapper.convertValue(item, Map.class);
-//		
-//		map.forEach((k,v)-> {
-//			if (k == "id") {
-//				this.jobId = v.toLong();
-//			}
-//		});
-//	}
+	public Long getJobId() {
+		return jobId;
+	}
+	
+	public void setJobId() {
+		ObjectMapper objectMapper = new ObjectMapper();
+		Map<String, Object> map = objectMapper.convertValue(item, Map.class);
+		
+		map.forEach((k,v)-> {
+			if (k == "id") {
+				this.jobId = Long.valueOf(v.toString());		
+			}
+		});
+	}
 
 }
