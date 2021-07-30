@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.devjobs.model.Jobs;
+import com.devjobs.model.Results;
 
 @RestController
 
@@ -31,28 +32,36 @@ public class JobsResource {
 	private RestTemplate restTemplate;
 
 	@GetMapping("/jobs")
-	public List<Jobs> getJobs() {
+	public List<Results> getJobs() {
 
 		String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey
 				+ "&what=juniordeveloper&where=london&content-type=application/json";
 
-		Jobs jobs = restTemplate.getForObject(url, Jobs.class);
+		Results results = restTemplate.getForObject(url, Results.class);
+		
 
-		System.out.println("RESULTS: " + jobs.getResults());
+//		System.out.println("RESULTS: " + results.getResults());
+//		
+//		Jobs jobs = new Jobs(results);
+//		System.out.println("LIST: " + jobs.jobList);
+		
+//		jobs.setTitle();
+//		
+//		System.out.println("TITLE: " + jobs.getTitle());
 
-		jobs.setItem();
+//		jobs.setItem();
+//		
+//		System.out.println("ITEM: " + jobs.getItem());
+//		
+//		jobs.setTitle(jobs.setItem());
+//		
+//		System.out.println("TITLE: " + jobs.getTitle());
+//		
+//		jobs.setJobId();
+//		
+//		System.out.println("JOBID: " + jobs.getJobId());
 		
-		System.out.println("ITEM: " + jobs.getItem());
-		
-		jobs.setTitle();
-		
-		System.out.println("TITLE: " + jobs.getTitle());
-		
-		jobs.setJobId();
-		
-		System.out.println("JOBID: " + jobs.getJobId());
-		
-		return Arrays.asList(jobs);
+		return Arrays.asList(results);
 //		make it Jobs(result) jobBuilder -> jobs -> job
 	}
 }
