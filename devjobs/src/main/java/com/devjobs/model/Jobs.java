@@ -40,11 +40,14 @@ public class Jobs {
 		
 		map.forEach((k,v)-> {
 			if (k == "title") {
-				System.out.println(v);
+//				System.out.println("THIS IS V: " + v);
 				this.title = v.toString();
 			}
 //			System.out.println("KEY: " + k + ". VALUE: " + v);
+//			this.title.toString();
 		});
+		
+//		this.title = title;
 	}
 	
 //	public Long getJobId() {
