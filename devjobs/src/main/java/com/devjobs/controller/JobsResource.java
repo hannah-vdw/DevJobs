@@ -40,10 +40,17 @@ public class JobsResource {
 		Results results = restTemplate.getForObject(url, Results.class);
 		
 
-//		System.out.println("RESULTS: " + results.getResults());
-//		
-//		Jobs jobs = new Jobs(results);
-//		System.out.println("LIST: " + jobs.jobList);
+		System.out.println("RESULTS: " + results.getResults());
+		
+		Jobs jobs = new Jobs(results);
+		System.out.println("LIST: " + jobs.jobList);
+		
+		
+//		jobs.setOverview();
+//		System.out.println(jobs.getOverview());
+		
+//		jobs.setDetails();
+		System.out.println(jobs.getDetails());
 		
 //		jobs.setTitle();
 //		
