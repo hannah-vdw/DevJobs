@@ -17,7 +17,7 @@ import com.devjobs.model.Results;
 
 @RestController
 
-@RequestMapping("/jobs")
+//@RequestMapping("/jobs")
 
 @Configuration
 public class JobsResource {

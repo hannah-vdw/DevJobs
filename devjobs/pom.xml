@@ -69,6 +69,23 @@
 				<!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
 				<plugin>
 					<artifactId>maven-resources-plugin</artifactId>
+					<executions>
+        <execution>
+          <id>copy-resources</id>
+          <phase>validate</phase>
+          <goals>
+            <goal>copy-resources</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>devjobs/target/classes/static/</outputDirectory>
+            <resources>
+              <resource>
+                <directory>devjobs/../react-frontend/build</directory>
+              </resource>
+            </resources>
+          </configuration>
+        </execution>
+      </executions>
 					<version>3.0.2</version>
 				</plugin>
 				<plugin>
