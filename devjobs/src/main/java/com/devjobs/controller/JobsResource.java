@@ -46,32 +46,13 @@ public class JobsResource {
 		System.out.println("LIST: " + jobs.jobList);
 		
 		
-//		jobs.setOverview();
-//		System.out.println(jobs.getOverview());
+		jobs.setOverview();
+		System.out.println("OVERVIEW: " + jobs.getOverview());
 		
-//		jobs.setDetails();
-		System.out.println(jobs.getDetails());
-		
-//		jobs.setTitle();
-//		
-//		System.out.println("TITLE: " + jobs.getTitle());
-
-//		jobs.setItem();
-//		
-//		System.out.println("ITEM: " + jobs.getItem());
-//		
-//		jobs.setTitle(jobs.setItem());
-//		
-//		System.out.println("TITLE: " + jobs.getTitle());
-//		
-//		jobs.setJobId();
-//		
-//		System.out.println("JOBID: " + jobs.getJobId());
+		jobs.setDetails();
+		System.out.println("DETAILS: " + jobs.getDetails());
 		
 		return Arrays.asList(results);
-//		make it Jobs(result) jobBuilder -> jobs -> job
 	}
 }
 
-//Job job = restTemplate.getForObject(
-//Job.class

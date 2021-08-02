@@ -11,15 +11,16 @@ public class Jobs {
 	//private Long jobId;
 	public Results jobList = new Results();
 	private ArrayList<Object> overview;
-	private HashMap<Object, Object> details;
-	private Object title;
-	private Object jobID;
+	private ArrayList<Map<String, String>> details;
+	
 	
 	public Jobs(Results results) {
 		this.jobList = results;
 	}
 	
 	public Object getOverview(){
+//		System.out.println("SIZE OF ARRAY " + this.overview.size());
+//		System.out.println("THING INSDE ARRAY " + this.overview.get(0).getClass());
 		return overview;
 	}
 	
@@ -32,62 +33,40 @@ public class Jobs {
 		});
 	}
 
-	public HashMap<Object, Object> getDetails() {
+	public ArrayList<Map<String, String>> getDetails() {
 		return details;
 	}
 
+	
 	public void setDetails() {
 		
-		for(int i=0; i<overview.size(); i++) {
+		this.details = new ArrayList<Map<String, String>>();
+		
+		for(int i=0; i<overview.size(); i++) {			
 			
 			ObjectMapper objectMapper = new ObjectMapper();
-			Map<Object, Object> map = objectMapper.convertValue(overview.get(i), Map.class);
+			Map<Object, Object> map = objectMapper.convertValue(overview.get(i), Map.class);			
+				
+			HashMap<String, String> hashItem = new HashMap<String, String>();
 			
 			map.forEach((k, v)->{
-				this.details.put(k, v);
 				
-//				System.out.println("KEY: " + k + " VALUE: " + v);
+				if (k == "title") {					
+					hashItem.put(k.toString(), v.toString());
+				} else if (k == "id")  {
+					hashItem.put(k.toString(), v.toString());
+				} else if (k == "description")  {
+					hashItem.put(k.toString(), v.toString());
+				}
+//			
+//				System.out.println("KEY: " + k + " class is " + k.getClass() + " VALUE: " + v + " class is " + v.getClass());
 			});
+			
+			this.details.add(hashItem);
 		}
-		
 		
 	}
 	
-	
-	
-	
-//	public Long getJobId() {
-//		return jobId;
-//	}
 
-//	public void setJobId() {
-//		this.jobId = jobId;
-////		ObjectMapper objectMapper = new ObjectMapper();
-////		Map<String, Object> map = objectMapper.convertValue(jobList.getItem(), Map.class);
-////		
-////		map.forEach((k,v)-> {
-////			if (k == "id") {
-////				this.jobId = Long.valueOf(v.toString());		
-////			}
-////		});
-//	}
-//	
-//	public String getTitle() {
-//		return title;
-//	}
-//
-//	public void setTitle() {
-//		this.title = title;
-//		System.out.println(jobList);
-		
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		Map<String, Object> map = objectMapper.convertValue(jobList.getItem(), Map.class);
-//		
-//		map.forEach((k,v)-> {
-//			if (k == "title") {
-//				this.title = v.toString();
-//			}
-//		});
-//	}
 
 }
