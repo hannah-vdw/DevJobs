@@ -7,11 +7,10 @@ import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Jobs {
-	//private String title;
-	//private Long jobId;
+	
 	public Results jobList = new Results();
 	private ArrayList<Object> overview;
-	private ArrayList<Map<String, String>> details;
+	public ArrayList<Map<String, String>> details;
 	
 	
 	public Jobs(Results results) {
@@ -19,8 +18,6 @@ public class Jobs {
 	}
 	
 	public Object getOverview(){
-//		System.out.println("SIZE OF ARRAY " + this.overview.size());
-//		System.out.println("THING INSDE ARRAY " + this.overview.get(0).getClass());
 		return overview;
 	}
 	
