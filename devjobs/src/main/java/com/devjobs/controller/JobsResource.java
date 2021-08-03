@@ -1,7 +1,9 @@
 package com.devjobs.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,7 +35,7 @@ public class JobsResource {
 	private RestTemplate restTemplate;
 
 	@GetMapping("/jobs")
-	public List<Results> getJobs() {
+	public List<ArrayList<Map<String, String>>> getJobs() {
 
 		String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey
 				+ "&what=juniordeveloper&where=london&content-type=application/json";
@@ -53,7 +55,7 @@ public class JobsResource {
 		jobs.setDetails();
 		System.out.println("DETAILS: " + jobs.getDetails());
 		
-		return Arrays.asList(results);
+		return Arrays.asList(jobs.getDetails());
 	}
 }
 

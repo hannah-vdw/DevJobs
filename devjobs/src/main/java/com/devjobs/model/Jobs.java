@@ -10,7 +10,7 @@ public class Jobs {
 	
 	public Results jobList = new Results();
 	private ArrayList<Object> overview;
-	private ArrayList<Map<String, String>> details;
+	public ArrayList<Map<String, String>> details;
 	
 	
 	public Jobs(Results results) {
