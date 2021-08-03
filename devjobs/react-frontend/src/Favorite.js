@@ -8,7 +8,7 @@ class Favorite extends Component {
   toggle = () => {
     let localFave = this.state.favorite;
   
-    // Toggle the state variable liked
+    // Toggle the state
     localFave = !localFave;
     this.setState({ favorite: localFave });
   };

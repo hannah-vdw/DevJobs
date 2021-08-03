@@ -9,7 +9,6 @@ class App extends React.Component {
     super(props);
     this.getJobs = this.getJobs.bind(this);
   }
-  // const [jobsArray, setJobsArray] = React.useState([]);
   
   state = {
   jobs: [],
