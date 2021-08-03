@@ -5,16 +5,18 @@ import List from "@material-ui/core/List";
 
 
 class App extends React.Component {
-  
   constructor(props) {
     super(props);
     this.getJobs = this.getJobs.bind(this);
   }
+  // const [jobsArray, setJobsArray] = React.useState([]);
   
   state = {
   jobs: []
     };
-
+  // state = {
+  //   jobsArray: []
+  // };
 
   
   async componentDidMount() {
@@ -37,7 +39,8 @@ class App extends React.Component {
     console.log("bodyArray[0].title");
     console.log(bodyArray[0].title);
 
-    this.setState({jobs: body});
+    this.setState({jobs: body[0]});
+
   }
   
   render(){
@@ -50,12 +53,13 @@ class App extends React.Component {
       
       getJobs() {
         const {jobs} = this.state;
-        console.log("Jobs in GET JOBS [0]");
-        console.log(jobs[0]);
+        console.log("Jobs in GET JOBS with jobs: body[0]");
+        console.log(jobs);
+
         return jobs.map(job =>
           <JobPost
             key={job.id}
-            jobTitle={job.tile}
+            jobTitle={job.title}
             jobId={job.id}
             jobDescription={job.description}
             />

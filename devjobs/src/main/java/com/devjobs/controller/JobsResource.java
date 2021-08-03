@@ -38,7 +38,7 @@ public class JobsResource {
 	public List<ArrayList<Map<String, String>>> getJobs() {
 
 		String url = "https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=" + appId + "&app_key=" + apiKey
-				+ "&what=juniordeveloper&where=london&content-type=application/json";
+				+ "&what=developer&where=london&content-type=application/json";
 
 		Results results = restTemplate.getForObject(url, Results.class);
 		
