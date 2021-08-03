@@ -7,8 +7,8 @@ import CardActions from "@material-ui/core/CardActions";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-// import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-// import ShareIcon from "@material-ui/icons/Share";
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ShareIcon from "@material-ui/icons/Share";
 import Button from "@material-ui/core/Button";
 import ListItem from "@material-ui/core/ListItem";
 
@@ -35,31 +35,31 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
 export default function JobPost(props) {
   const classes = useStyles();
+
+  
 
   return (
     <ListItem>
       <Card className={classes.root}>
-
+        
         <CardHeader
-          title={props.jobTitle}
+          title={props.jobTitle.replace(/(<([^>]+)>)/gi, "")}
           subheader="August 03, 2021"
         />
-
+        
         <CardContent>
 
           <Typography variant="body2" color="textSecondary" component="p">
-            {props.jobDescription}
+            {props.jobDescription.replace(/(<([^>]+)>)/gi, "")}
           </Typography>
 
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
 
         </CardContent>
 
-        {/* <CardActions disableSpacing>
+        <CardActions disableSpacing>
 
           <IconButton aria-label="add to favorites">
             <FavoriteBorderIcon />
@@ -69,7 +69,7 @@ export default function JobPost(props) {
             <ShareIcon />
           </IconButton> 
 
-        </CardActions> */}
+        </CardActions>
 
       </Card>
 

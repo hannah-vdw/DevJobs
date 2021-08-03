@@ -14,31 +14,11 @@ class App extends React.Component {
   state = {
   jobs: []
     };
-  // state = {
-  //   jobsArray: []
-  // };
 
-  
+    
   async componentDidMount() {
     const response = await fetch('/jobs');
     const body = await response.json();
-
-    console.log("Body");
-    console.log(body);
-
-    console.log("Body.[0]");
-    console.log(body[0]);
-
-    const bodyArray = body[0];
-    console.log("bodyArray");
-    console.log(bodyArray);
-
-    console.log("bodyArray.[0]");
-    console.log(bodyArray[0]);
-
-    console.log("bodyArray[0].title");
-    console.log(bodyArray[0].title);
-
     this.setState({jobs: body[0]});
 
   }
@@ -53,9 +33,6 @@ class App extends React.Component {
       
       getJobs() {
         const {jobs} = this.state;
-        console.log("Jobs in GET JOBS with jobs: body[0]");
-        console.log(jobs);
-
         return jobs.map(job =>
           <JobPost
             key={job.id}
