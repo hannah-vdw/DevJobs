@@ -12,7 +12,7 @@ class App extends React.Component {
   // const [jobsArray, setJobsArray] = React.useState([]);
   
   state = {
-  jobs: []
+  jobs: [],
     };
 
     
