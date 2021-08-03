@@ -54,8 +54,13 @@ public class Jobs {
 					hashItem.put(k.toString(), v.toString());
 				} else if (k == "description")  {
 					hashItem.put(k.toString(), v.toString());
+				} else if (k == "redirect_url") {
+					hashItem.put(k.toString(), v.toString());
+				} else if (k == "created") {
+					hashItem.put(k.toString(), v.toString());
 				}
-//			
+					
+			
 //				System.out.println("KEY: " + k + " class is " + k.getClass() + " VALUE: " + v + " class is " + v.getClass());
 			});
 			
