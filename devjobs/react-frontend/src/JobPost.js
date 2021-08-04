@@ -34,16 +34,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+
+
 export default function JobPost(props) {
   const classes = useStyles();
-  
+
+
+  const formatDate = (utcDate) => {
+    let dbDate = new Date(utcDate).toString();
+    let dbDateToGMT = new Date(`${dbDate} GMT`).toString();
+    let arr = dbDateToGMT.split(' GMT');
+    let formattedDate = arr[0];
+    return formattedDate;
+  }
+
   return (
     <ListItem>
       <Card className={classes.root}>
         
         <CardHeader
           title={props.jobTitle.replace(/(<([^>]+)>)/gi, "")}
-          subheader="August 03, 2021"
+          subheader={formatDate(props.jobDate)}
         />
         
         <CardContent>
