@@ -48,14 +48,15 @@ public class Jobs {
 			
 			map.forEach((k, v)->{
 				
-				if (k == "title") {					
+				switch (k.toString()) {
+				case "title":
+				case "id":
+				case "description":
+				case "redirect_url":
+				case "created":
 					hashItem.put(k.toString(), v.toString());
-				} else if (k == "id")  {
-					hashItem.put(k.toString(), v.toString());
-				} else if (k == "description")  {
-					hashItem.put(k.toString(), v.toString());
-				}
-//			
+					break;
+				}		
 //				System.out.println("KEY: " + k + " class is " + k.getClass() + " VALUE: " + v + " class is " + v.getClass());
 			});
 			
