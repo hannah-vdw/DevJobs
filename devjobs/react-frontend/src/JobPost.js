@@ -43,7 +43,7 @@ export default function JobPost(props) {
   const formatDate = (utcDate) => {
     let dbDate = new Date(utcDate).toString();
     let dbDateToGMT = new Date(`${dbDate} GMT`).toString();
-    let arr = dbDateToGMT.split(' GMT');
+    let arr = dbDateToGMT.split(/ \d\d[:]/);
     let formattedDate = arr[0];
     return formattedDate;
   }
