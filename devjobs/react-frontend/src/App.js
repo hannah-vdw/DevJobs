@@ -1,6 +1,7 @@
 import React from 'react';
 import JobPost from "./JobPost"
 import List from "@material-ui/core/List";
+import Form from "./Form"
 
 
 
@@ -24,9 +25,12 @@ class App extends React.Component {
   
   render(){
     return (
+      <div>
+      <Form />
       <List>
         {this.getJobs()}
       </List>
+      </div>
         );
       }
       
