@@ -9,6 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.getJobs = this.getJobs.bind(this);
+    
   }
   
   state = {
@@ -23,7 +24,12 @@ class App extends React.Component {
 
   }
   
+
+
   render(){
+    // const {location} = this.state;
+    // console.log("LOCATION FROM FORM");
+    // console.log(location);
     return (
       <div>
       <Form />

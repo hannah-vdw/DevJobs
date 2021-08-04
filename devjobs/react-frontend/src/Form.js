@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,18 +27,25 @@ const useStyles = makeStyles((theme) => ({
 export default function Form(props) {
     const [location, setLocation] = useState("");
 
-    const submitLocation = () => {
-      console.log(location);
-    }
+    // const submitLocation = () => {
+    //   console.log(location);
+    // }
 
+    
     const handleSubmitLocation = (event) => {
-      submitLocation();
+      console.log(location);
+      const formData = new FormData();
+      formData.append('text', location);
+      axios.post('http://localhost:9000/jobs', formData, {
+        headers: {"Access-Control-Allow-Origin": "*"}
+      });
     }
     
+    
+
     const handleFormContent = (event) => {
       setLocation(event.target.value);
     }
-
 
   const classes = useStyles();
 
