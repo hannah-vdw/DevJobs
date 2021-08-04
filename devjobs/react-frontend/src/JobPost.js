@@ -55,7 +55,7 @@ export default function JobPost(props) {
         
         <CardHeader
           title={props.jobTitle.replace(/(<([^>]+)>)/gi, "")}
-          subheader={formatDate("2021-07-21T11:34:49Z")}
+          subheader={formatDate(props.jobDate)}
         />
         
         <CardContent>
