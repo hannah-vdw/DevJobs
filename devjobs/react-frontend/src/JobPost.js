@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import ShareIcon from "@material-ui/icons/Share";
 import ListItem from "@material-ui/core/ListItem";
+import Box from '@material-ui/core/Box';
+import { spacing } from '@material-ui/system';
 import Favorite from "./Favorite";
 
 const useStyles = makeStyles((theme) => ({
@@ -48,6 +50,13 @@ export default function JobPost(props) {
     return formattedDate;
   }
 
+  const formatSalary = parseInt(props.jobSalaryMin).toLocaleString('en-GB', {
+    style           : 'currency',
+    currency        : 'GBP',
+    currencyDisplay : 'symbol',
+    useGrouping     : true
+  })
+
   return (
     <ListItem>
       <Card className={classes.root}>
@@ -55,17 +64,26 @@ export default function JobPost(props) {
         <CardHeader
           display-data
           title={<a rel="noreferrer" target="_blank" href={props.jobURL}> {props.jobTitle.replace(/(<([^>]+)>)/gi, "")} </a>}
-          subheader={formatDate(props.jobDate)}
+          subheader={`${formatSalary} per year`}
+      
         />
         
         <CardContent>
-
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.jobDescription.replace(/(<([^>]+)>)/gi, "")}
-          </Typography>
+          <Box mt={-3}>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {props.jobDescription.replace(/(<([^>]+)>)/gi, "")}
+            </Typography>
+          </Box>
 
 
         </CardContent>
+
+        <Box ml={2}>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {`Created: ${formatDate(props.jobDate)}`}
+          </Typography>
+
+        </Box>
 
         <CardActions disableSpacing>
 

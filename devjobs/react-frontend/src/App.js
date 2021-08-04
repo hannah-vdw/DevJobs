@@ -44,6 +44,7 @@ class App extends React.Component {
             jobDescription={job.description}
             jobURL={job.redirect_url}
             jobDate={job.created}
+            jobSalaryMin={job.salary_min}
             />
       );
    }
