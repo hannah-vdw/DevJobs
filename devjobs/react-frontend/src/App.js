@@ -39,6 +39,8 @@ class App extends React.Component {
             jobTitle={job.title}
             jobId={job.id}
             jobDescription={job.description}
+            jobURL={job.redirect_url}
+            jobDate={job.created}
             />
       );
    }
