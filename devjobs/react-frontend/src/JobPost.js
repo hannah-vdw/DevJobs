@@ -42,8 +42,8 @@ export default function JobPost(props) {
       <Card className={classes.root}>
         
         <CardHeader
-          title={props.jobTitle.replace(/(<([^>]+)>)/gi, "")}
-          subheader="August 03, 2021"
+          title={<a rel="noreferrer" target="_blank" href={props.jobURL}> {props.jobTitle.replace(/(<([^>]+)>)/gi, "")} </a>}
+          subheader={props.jobDate}
         />
         
         <CardContent>
