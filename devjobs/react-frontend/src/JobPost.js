@@ -54,7 +54,9 @@ export default function JobPost(props) {
     style           : 'currency',
     currency        : 'GBP',
     currencyDisplay : 'symbol',
-    useGrouping     : true
+    useGrouping     : true,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
   })
 
   return (
