@@ -14,7 +14,8 @@ import Favorite from "./Favorite";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
+    fontSize: '3rem'
   },
   media: {
     height: 0,

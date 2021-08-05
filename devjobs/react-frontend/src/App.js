@@ -4,6 +4,7 @@ import List from "@material-ui/core/List";
 import Form from "./Form"
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import "./App.css";
 
 
 
@@ -28,7 +29,7 @@ class App extends React.Component {
   
   render(){
     return (
-      <div>
+      <div className="App">
         <Form />
 
       <React.Fragment>

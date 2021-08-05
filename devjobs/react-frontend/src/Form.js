@@ -11,8 +11,11 @@ import Container from '@material-ui/core/Container';
 import { blue } from '@material-ui/core/colors';
 import Image from "./img/Computer_Programmer.jpeg";
 import Box from '@material-ui/core/Box';
-import { color } from '@material-ui/system';
+import { borderColor, color } from '@material-ui/system';
+import { styled } from '@material-ui/core';
 
+
+  
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -20,24 +23,28 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     backgroundImage: `url(${Image})`,
     backgroundSize: "cover",
-    height: "50vh"
+    height: "60vh"
   },
-  // form: {
-  //   backgroundImage: `url(${Image})`,
-  //   backgroundSize: "cover",
-  //   height: "50vh",
-  // },
+  textfield_input: {
+    color: '#FFFFFF'
+  },
   form: {
-    border: '2px solid #ced4da',
-    borderRadius: 4
-
+    borderBottom: '3px solid #FFFFFF',
+    //borderRadius: 4
   },
+    
+  textfield_label: {
+    color: '#FFFFFF !important',
+    fontSize: '1.25rem'
+  },
+
   mar: {
     width: '50%'
   },
 
   title: {
-    paddingBottom: theme.spacing(4),
+    //paddingBottom: theme.spacing(8),
+    marginBottom: theme.spacing(10)
   },
   overlay: {
     position: 'absolute',
@@ -45,10 +52,14 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
   button: {
-    padding: theme.spacing(1.2)
+    padding: theme.spacing(1.2),
+    color: '#FFFFFF',
+    fontSize: '1rem',
+    border: '3px solid #FFFFFF'
+    
   }
 }));
 
@@ -80,14 +91,14 @@ export default function Form(props) {
     <section className={classes.root}>
       
     <div className={classes.overlay}>
-       <Box height="100%"
+       <Box height="120%"
           display="flex"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
           color="#fff">
 
-      <Typography variant="h3" component="h1" className={classes.title}>
+      <Typography variant="h2" component="h1" className={classes.title}>
             Start your journey with DevJobs
           </Typography>
       
@@ -95,31 +106,31 @@ export default function Form(props) {
         <Grid item md={5} >
           <TextField
             fullWidth
-            id="outlined-size-small"
+            id="standard-basic"
             label="Job location..."
-            size="small"
-            variant="outlined"
+            // variant="outlined"
             onChange={handleFormContent}
             className={classes.form}
+            InputLabelProps = {{className: classes.textfield_label}}
+            InputProps = {{className: classes.textfield_input}}
           />
         </Grid>
           <Grid item md={5} >
           <TextField
             fullWidth
-            id="outlined-size-small"
+            id="standard-basic"
             label="Job title..."
-            size="small"
-            variant="outlined"
+            // variant="outlined"
             onChange={handleFormContent}
             className={classes.form}
-            
+            InputLabelProps = {{className: classes.textfield_label}}
+            InputProps = {{className: classes.textfield_input}}
           />
         </Grid>
         <Grid item md={2}>
           <Button
           fullWidth
-            variant="contained"
-            color="secondary"
+            variant="outlined"
             disableElevation
             className={classes.button}
             size="medium"
