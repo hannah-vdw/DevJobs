@@ -30,7 +30,7 @@ export default function Form(props) {
     const handleSubmitLocation = (event) => {
       console.log(location);
       const formData = new FormData();
-      formData.append('text', location);
+      formData.append("text", `${location}`);
       axios.post('http://localhost:9000/jobs', formData, {
         headers: {"Access-Control-Allow-Origin": "*"}
       });
