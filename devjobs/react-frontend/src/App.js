@@ -2,6 +2,9 @@ import React from 'react';
 import JobPost from "./JobPost"
 import List from "@material-ui/core/List";
 import Form from "./Form"
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+
 
 
 
@@ -26,13 +29,20 @@ class App extends React.Component {
   render(){
     return (
       <div>
-      <Form />
-      <List>
-        {this.getJobs()}
-      </List>
+        <Form />
+
+      <React.Fragment>
+      <CssBaseline />
+        <Container fixed>
+          <List>
+            {this.getJobs()}
+          </List>
+        </ Container>
+      </React.Fragment>
+
       </div>
-        );
-      }
+    );
+  }
       
       getJobs() {
         const {jobs} = this.state;
