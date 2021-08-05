@@ -54,6 +54,7 @@ public class Jobs {
 				case "description":
 				case "redirect_url":
 				case "created":
+				case "salary_min":
 					hashItem.put(k.toString(), v.toString());
 					break;
 				}		
