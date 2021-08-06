@@ -2,17 +2,11 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import { blue } from "@material-ui/core/colors";
 import Image from "./img/Computer_Programmer.jpeg";
 import Box from "@material-ui/core/Box";
-import { borderColor, color } from "@material-ui/system";
-import { styled } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,27 +17,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     height: "60vh",
   },
-  textfield_input: {
-    color: "#FFFFFF",
-  },
-  form: {
-    borderBottom: "3px solid #FFFFFF",
-    //borderRadius: 4
-  },
-
-  textfield_label: {
-    color: "#FFFFFF !important",
-    fontSize: "1.25rem",
-  },
-
-  mar: {
-    width: "50%",
-  },
-
-  title: {
-    //paddingBottom: theme.spacing(8),
-    marginBottom: theme.spacing(10),
-  },
   overlay: {
     position: "absolute",
     top: 0,
@@ -51,6 +24,22 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.6)",
+  },
+  textfield_input: {
+    color: "#FFFFFF",
+  },
+  textfield_label: {
+    color: "#FFFFFF !important",
+    fontSize: "1.25rem",
+  },
+  form: {
+    borderBottom: "3px solid #FFFFFF",
+  },
+  mar: {
+    width: "50%",
+  },
+  title: {
+    marginBottom: theme.spacing(10),
   },
   button: {
     padding: theme.spacing(1.2),
@@ -128,7 +117,6 @@ export default function Form(props) {
                 className={classes.button}
                 size="medium"
                 onClick={handleSubmitLocation}
-                className={classes.button}
               >
                 Search
               </Button>

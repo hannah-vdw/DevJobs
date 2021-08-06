@@ -5,11 +5,9 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { red } from "@material-ui/core/colors";
 import ShareIcon from "@material-ui/icons/Share";
 import ListItem from "@material-ui/core/ListItem";
 import Box from "@material-ui/core/Box";
-import { spacing } from "@material-ui/system";
 import Favorite from "./Favorite";
 import "./JobPost.css";
 
@@ -21,19 +19,6 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: "56.25%", // 16:9
-  },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: "rotate(180deg)",
-  },
-  avatar: {
-    backgroundColor: red[500],
   },
 }));
 
