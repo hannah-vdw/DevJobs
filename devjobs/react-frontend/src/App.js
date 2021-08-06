@@ -2,6 +2,7 @@ import React from 'react';
 import JobPost from "./JobPost"
 import List from "@material-ui/core/List";
 import Form from "./Form"
+import Navbar from "./Navbar"
 
 
 
@@ -26,6 +27,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
+      <Navbar />
       <Form />
       <List>
         {this.getJobs()}
