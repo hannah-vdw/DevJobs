@@ -47,12 +47,14 @@ export default function JobPost(props) {
     return formattedDate;
   };
 
-  const formatSalary = parseInt(props.jobSalaryMin).toLocaleString("en-GB", {
-    style: "currency",
-    currency: "GBP",
-    currencyDisplay: "symbol",
-    useGrouping: true,
-  });
+  const formatSalary = parseInt(props.jobSalaryMin).toLocaleString('en-GB', {
+    style           : 'currency',
+    currency        : 'GBP',
+    currencyDisplay : 'symbol',
+    useGrouping     : true,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  })
 
   return (
     <ListItem>

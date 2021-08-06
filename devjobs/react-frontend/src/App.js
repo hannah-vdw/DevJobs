@@ -5,6 +5,10 @@ import Form from "./Form";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import "./App.css";
+import Navbar from "./Navbar";
+
+
+
 
 class App extends React.Component {
   constructor(props) {
@@ -25,8 +29,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+      <Navbar />
         <Form />
-
         <React.Fragment>
           <CssBaseline />
           <Container fixed>

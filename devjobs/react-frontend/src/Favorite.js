@@ -18,7 +18,7 @@ class Favorite extends Component {
             {this.state.favorite === false ? (
               <FavoriteBorderIcon />
             ) : (
-              <FavoriteIcon color="secondary" />
+              <FavoriteIcon style={{ color: '#ff777f' }}  />
             )}
       </IconButton>
 
