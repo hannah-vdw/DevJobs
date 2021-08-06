@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1rem",
     border: "3px solid #FFFFFF",
     borderRadius: 7,
+    "&:hover": { border: "3px solid #ff777f" },
   },
 }));
 
@@ -136,47 +137,5 @@ export default function Form(props) {
         </Box>
       </div>
     </section>
-
-    // <div className={classes.root}>
-    //   <Paper className={classes.paper}>
-    // <Grid container  spacing={1}>
-    //     <Grid item md={5} >
-    //       <TextField
-    //         fullWidth
-    //         id="outlined-size-small"
-    //         label="Job location..."
-    //         size="small"
-    //         variant="outlined"
-    //         onChange={handleFormContent}
-    //         className={classes.mar}
-    //       />
-    //     </Grid>
-    //       <Grid item md={5} >
-    //       <TextField
-    //         fullWidth
-    //         id="outlined-size-small"
-    //         label="Job title..."
-    //         size="small"
-    //         variant="outlined"
-    //         onChange={handleFormContent}
-    //         className={classes.mar}
-    //       />
-    //     </Grid>
-    //     <Grid item md={2}>
-    //       <Button
-    //       fullWidth
-    //         variant="contained"
-    //         color="secondary"
-    //         disableElevation
-    //         className={classes.button}
-    //         size="medium"
-    //         onClick={handleSubmitLocation}
-    //       >
-    //         Search
-    //       </Button>
-    //     </Grid>
-    //   </Grid>
-    //   </Paper>
-    //   </div>
   );
 }

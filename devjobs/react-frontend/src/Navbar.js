@@ -1,6 +1,6 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -8,15 +8,15 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    fontWeight: 600
+    fontWeight: 600,
   },
   navColor: {
-    background: '#031966',
-    color: '#31e6dd'
+    background: "#FFFFFF",
+    color: "#003343",
   },
   button: {
-    fontWeight: 600
-  }
+    fontWeight: 600,
+  },
 }));
 
 const Navbar = () => {
@@ -24,14 +24,16 @@ const Navbar = () => {
 
   return (
     <AppBar position="sticky" className={classes.navColor}>
-    <Toolbar>
-      <Typography variant="h5" className={classes.title}>
-        DevJobs
-      </Typography>
-      <Button color="inherit" className={classes.button}>Login</Button>
-    </Toolbar>
-  </AppBar>
-  )
-}
+      <Toolbar>
+        <Typography variant="h5" className={classes.title}>
+          DevJobs
+        </Typography>
+        <Button color="inherit" className={classes.button}>
+          Login
+        </Button>
+      </Toolbar>
+    </AppBar>
+  );
+};
 
 export default Navbar;

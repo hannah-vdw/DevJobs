@@ -11,6 +11,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Box from "@material-ui/core/Box";
 import { spacing } from "@material-ui/system";
 import Favorite from "./Favorite";
+import "./JobPost.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,14 +48,14 @@ export default function JobPost(props) {
     return formattedDate;
   };
 
-  const formatSalary = parseInt(props.jobSalaryMin).toLocaleString('en-GB', {
-    style           : 'currency',
-    currency        : 'GBP',
-    currencyDisplay : 'symbol',
-    useGrouping     : true,
+  const formatSalary = parseInt(props.jobSalaryMin).toLocaleString("en-GB", {
+    style: "currency",
+    currency: "GBP",
+    currencyDisplay: "symbol",
+    useGrouping: true,
     minimumFractionDigits: 0,
-    maximumFractionDigits: 0
-  })
+    maximumFractionDigits: 0,
+  });
 
   return (
     <ListItem>
