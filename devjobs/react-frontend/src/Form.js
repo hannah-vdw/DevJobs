@@ -91,7 +91,7 @@ export default function Form(props) {
           color="#fff"
         >
           <Typography variant="h2" component="h1" className={classes.title}>
-            Start your journey with DevJobs
+            cd ./DevJobs/JourneyStart
           </Typography>
 
           <Grid container spacing={1} className={classes.mar}>
