@@ -14,7 +14,7 @@ import Favorite from "./Favorite";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
   media: {
     height: 0,
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     backgroundColor: red[500]
-  }
+  },
 }));
 
 
